@@ -3,83 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaman Zahid - Personal Website</title>
+    <title>Zaman Zahid - Modern Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1>Zaman Zahid</h1>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <!-- Loading Animation -->
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Zaman Zahid</a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
         </nav>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <h2>Hi, I'm Zaman</h2>
-            <p>Passionate about programming, robotics, AI, and technology.</p>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I'm Zaman Zahid, a student deeply immersed in the world of technology. My journey began with a fascination for how things work, leading me to explore programming, robotics, and artificial intelligence. I enjoy learning new concepts, building innovative solutions, and contributing to projects that make a real-world impact. Always eager to expand my knowledge and tackle new challenges in the ever-evolving tech landscape.</p>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming: Python, C++, Java</li>
-                <li>Robotics: ROS, Arduino, Robot Operating Systems</li>
-                <li>Web Development: HTML, CSS, JavaScript, React</li>
-                <li>AI/ML: Machine Learning Fundamentals, Data Analysis</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <h3>SimpleNotes</h3>
-                <p>A minimalist note-taking application designed for quick and easy organization of thoughts and ideas.</p>
-            </div>
-            <div class="project-item">
-                <h3>RoboSoto</h3>
-                <p>An autonomous robot project focusing on navigation and object manipulation in dynamic environments.</p>
-            </div>
-            <div class="project-item">
-                <h3>Self Driving Car Project</h3>
-                <p>Exploration into the principles of autonomous driving, including perception, path planning, and control systems.</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background-animation"></div>
+        <div class="hero-content container">
+            <p class="greeting">Hi, I'm</p>
+            <h1 class="name">Zaman Zahid</h1>
+            <p class="description"><span class="typing-text"></span></p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary-btn">View My Work</a>
+                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
         <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:its.zaman001@gmail.com">its.zaman001@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/zaman-zahid" target="_blank">github.com/zaman-zahid</a></p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm Zaman Zahid, a passionate high school student with a deep interest in software development, robotics, artificial intelligence, and problem-solving. My journey into technology started with curiosity and has evolved into a drive to build innovative solutions that make a difference.</p>
+                    <p>I enjoy the process of bringing ideas to life through code, whether it's developing web applications, programming robots, or exploring machine learning algorithms. I'm constantly learning and seeking new challenges to expand my knowledge and skills in the ever-evolving tech landscape.</p>
+                </div>
+                <div class="about-interests">
+                    <h3>Interests & Hobbies</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <h4>Coding</h4>
+                        </div>
+                        <div class="interest-card">
+                            <h4>Robotics</h4>
+                        </div>
+                        <div class="interest-card">
+                            <h4>AI/ML</h4>
+                        </div>
+                        <div class="interest-card">
+                            <h4>Web Dev</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
         <div class="container">
-            <p>&copy; 2026 Zaman Zahid. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>C++</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Java</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="75"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+                    <div class="skill-item">
+                        <span>HTML/CSS</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="80"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="70"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>React</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="60"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Robotics</h3>
+                    <div class="skill-item">
+                        <span>ROS</span>
+                        <div class="skill-bar-container"><div class="skill-bar" data-level="85"></div></div>
+                    </div>
