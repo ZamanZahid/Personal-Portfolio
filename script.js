@@ -127,4 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.section-title, .about-content, .skill-card, .project-card, .experience-items > div').forEach(el => {
         observer.observe(el);
     });
+
+    // Resume Button Handler
+    const resumeBtn = document.querySelector('.resume-btn');
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Create a link to download resume
+            // Replace 'resume.pdf' with your actual resume file path
+            const link = document.createElement('a');
+            link.href = 'resume.pdf'; // Make sure to have a resume.pdf file in your root directory
+            link.download = 'Zaman_Zahid_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
 });
