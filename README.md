@@ -4,7 +4,7 @@
 
 # Personal Portfolio Website
 
-My personal portfolio website built with HTML, CSS, and a lot of JAVASCRIPT? thats because there is a secret game inside the website and thats why there is so much JS. This website basically is a small show and tell of my projects, skills, and interests in programming, robotics, artificial intelligence, and technology.
+My personal portfolio website built with HTML, CSS, and JAVASCRIPT?. This website basically is a small show and tell of my projects, skills, and interests in programming, robotics, artificial intelligence, and technology.
 
 ## About
 
@@ -42,8 +42,11 @@ I'm Zaman, a high school student from Virginia with a passion for software devel
 
 ## Future Improvements
 
-* Actual project showcases
+* Additional project showcases
+* Enhanced animations and UI effects
 * Dark/Light mode toggle
+* Improved accessibility
+* More interactive features
 
 ## Author
 
