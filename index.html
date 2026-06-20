@@ -14,8 +14,8 @@
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Header and Navigation -->
-    <header class="header">
+    <!-- Header and Navigation - Hidden -->
+    <header class="header" style="display: none;">
         <nav class="navbar container">
             <a href="#" class="logo"></a>
             <ul class="nav-links">
@@ -38,18 +38,48 @@
     <section id="hero" class="hero-section">
         <div class="hero-background-animation"></div>
         <div class="hero-content container">
-            <p class="greeting">Hi, I'm</p>
-            <h1 class="name">Zaman Zahid</h1>
-            <p class="description"><span class="typing-text"></span></p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn primary-btn">View My Work</a>
-                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p class="greeting">Hi, I'm</p>
+                    <h1 class="name">Zaman Zahid</h1>
+                    <p class="description"><span class="typing-text"></span></p>
+                    
+                    <!-- About Content in Hero -->
+                    <div class="hero-about">
+                        <p>I'm Zaman, a 16 year old high school student based in Virginia, USA. I have a passion for programming, robotics, artificial intelligence, and technology in general. I enjoy building both software and hardware projects that help me learn new skills.</p>
+                        <p>I have experience working with HTML, CSS, JavaScript, Python, Java, TypeScript, Next.js, and tons of other development tools.</p>
+                    </div>
+                    
+                    <!-- Social Icons and Navigation Buttons -->
+                    <div class="buttons-container">
+                        <div class="social-icons">
+                            <a href="https://github.com/ZamanZahid" target="_blank" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:its.zaman001@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://discord.com/users/786644197427118150" class="social-icon" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <a href="#skills" class="nav-btn">Skills</a>
+                            <a href="#experience" class="nav-btn">Experience</a>
+                            <a href="#" class="nav-btn resume-btn">Resume</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="profile.png" alt="Zaman Zahid" class="profile-img">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section section-padding">
+    <!-- About Section - Hidden -->
+    <section id="about" class="about-section section-padding" style="display: none;">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
@@ -145,11 +175,14 @@
                     </div>
                 </div>
             </div>
+            <div class="view-more-container">
+                <button class="view-more-btn">View More <i class="fas fa-arrow-down"></i></button>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section section-padding">
+    <!-- Projects Section - Hidden -->
+    <section id="projects" class="projects-section section-padding" style="display: none;">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="project-filters">
@@ -247,16 +280,35 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section section-padding">
+    <!-- Contact Section - Hidden -->
+    <section id="contact" class="contact-section section-padding" style="display: none;">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <p><i class="fas fa-envelope"></i> Email: <a href="mailto:zaman.zahid@example.com">zaman.zahid@example.com</a></p>
                     <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/ZamanZahid" target="_blank">github.com/ZamanZahid</a></p>
-                    <p><i class="fab fa-discord"></i> Discord: <a href="" target="_blank">YOUR_DISCORD_LINK</a></p>
+                    <p><i class="fab fa-discord"></i> Discord: <a href="https://discord.com/users/786644197427118150" target="_blank">its.zamanzahid</a></p>
                 </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project idea, internship, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea or what you'd like to discuss..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn send-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -264,8 +316,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Zaman Zahid. All rights reserved.</p>
-            
+            <p>&copy; 2026 Zaman. All rights reserved.</p>
         </div>
     </footer>
 
