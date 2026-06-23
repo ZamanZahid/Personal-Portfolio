@@ -33,6 +33,7 @@ I'm Zaman, a high school student from Virginia with a passion for software devel
 
 * Future project showcase space
 * Dark and Light mode toogle
+* Create a Resume ( I currently have a button for my Resume, but I havent made 1 yet )
 
 ## Author
 
