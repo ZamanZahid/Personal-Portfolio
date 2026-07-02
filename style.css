@@ -16,6 +16,10 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -24,10 +28,10 @@ body {
     background-color: var(--bg-color-dark);
     color: var(--text-color-light);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -170,6 +174,8 @@ a:hover {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 1s ease-out 0.5s forwards;
+    min-width: 0;
+    width: 100%;
 }
 
 .hero-container {
@@ -210,7 +216,7 @@ a:hover {
     }
     
     .hero-text {
-        min-width: 100%;
+        min-width: 0;
         width: 100%;
         padding: 0;
         box-sizing: border-box;
@@ -260,6 +266,7 @@ a:hover {
     overflow: hidden;
     position: relative;
     height: 55px;
+    min-width: 0;
 }
 
 .skills-badges {
@@ -437,6 +444,7 @@ a:hover {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .social-icons {
@@ -445,6 +453,7 @@ a:hover {
     justify-content: center;
     gap: 12px;
     margin-bottom: 0;
+    flex-wrap: wrap;
 }
 
 .social-icon {
@@ -600,4 +609,3 @@ a:hover {
         font-size: 1.5em;
     }
 }
-
