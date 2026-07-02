@@ -243,6 +243,10 @@ class SnakeGame {
             { color: '#e84393', accent: '#fd79a8' },
         ];
         this.keyHandler = this.handleKeyDown.bind(this);
+        this.touchStartHandler = this.handleTouchStart.bind(this);
+        this.touchMoveHandler = this.handleTouchMove.bind(this);
+        this.touchStartX = 0;
+        this.touchStartY = 0;
     }
 
     start() {
@@ -265,6 +269,8 @@ class SnakeGame {
         this.canvas.setAttribute('aria-hidden', 'false');
         window.addEventListener('resize', this.resizeHandler = () => this.resize());
         window.addEventListener('keydown', this.keyHandler);
+        this.canvas.addEventListener('touchstart', this.touchStartHandler, { passive: false });
+        this.canvas.addEventListener('touchmove', this.touchMoveHandler, { passive: false });
         this.bombSpawnIntervalId = setInterval(() => {
             if (this.running) {
                 this.spawnBomb();
@@ -288,6 +294,8 @@ class SnakeGame {
         }
         this.clearBombInterval();
         window.removeEventListener('keydown', this.keyHandler);
+        this.canvas.removeEventListener('touchstart', this.touchStartHandler);
+        this.canvas.removeEventListener('touchmove', this.touchMoveHandler);
         if (this.resizeHandler) {
             window.removeEventListener('resize', this.resizeHandler);
         }
@@ -304,6 +312,8 @@ class SnakeGame {
         }
         this.clearBombInterval();
         window.removeEventListener('keydown', this.keyHandler);
+        this.canvas.removeEventListener('touchstart', this.touchStartHandler);
+        this.canvas.removeEventListener('touchmove', this.touchMoveHandler);
         if (this.resizeHandler) {
             window.removeEventListener('resize', this.resizeHandler);
         }
@@ -363,6 +373,62 @@ class SnakeGame {
         if (!isReverse) {
             this.nextDirection = newDir;
         }
+    }
+
+    handleTouchStart(event) {
+        if (!this.running) return;
+        event.preventDefault(); // Prevent scrolling
+        this.touchStartX = event.touches[0].clientX;
+        this.touchStartY = event.touches[0].clientY;
+    }
+
+    handleTouchMove(event) {
+        if (!this.running) return;
+        event.preventDefault(); // Prevent scrolling
+
+        if (!this.touchStartX || !this.touchStartY) {
+            return;
+        }
+
+        let touchEndX = event.touches[0].clientX;
+        let touchEndY = event.touches[0].clientY;
+
+        let dx = touchEndX - this.touchStartX;
+        let dy = touchEndY - this.touchStartY;
+
+        // Require a minimum swipe distance to avoid accidental tiny movements
+        if (Math.abs(dx) < 30 && Math.abs(dy) < 30) {
+            return;
+        }
+
+        let newDir = null;
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+            // Horizontal swipe
+            if (dx > 0) {
+                newDir = { x: 1, y: 0 }; // Right
+            } else {
+                newDir = { x: -1, y: 0 }; // Left
+            }
+        } else {
+            // Vertical swipe
+            if (dy > 0) {
+                newDir = { x: 0, y: 1 }; // Down
+            } else {
+                newDir = { x: 0, y: -1 }; // Up
+            }
+        }
+
+        if (newDir) {
+            const isReverse = newDir.x === -this.direction.x && newDir.y === -this.direction.y;
+            if (!isReverse) {
+                this.nextDirection = newDir;
+            }
+        }
+
+        // Reset touch start to prevent continuous triggering in one swipe
+        this.touchStartX = 0;
+        this.touchStartY = 0;
     }
 
     spawnFruits(count) {
