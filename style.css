@@ -1,4 +1,8 @@
 /* General Styling */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: #1a1a1a; /* Dark background */
     --secondary-color: #00d4ff; /* Cyan accent */
@@ -181,7 +185,9 @@ a:hover {
 .hero-text {
     flex: 1;
     min-width: 300px;
+    max-width: 100%;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .hero-image {
@@ -203,6 +209,13 @@ a:hover {
         flex-direction: column-reverse;
     }
     
+    .hero-text {
+        min-width: 100%;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
     .profile-img {
         width: 200px;
         height: 200px;
@@ -222,6 +235,8 @@ a:hover {
     .hero-about {
         font-size: 0.9em;
         padding: 0 15px;
+        box-sizing: border-box;
+        width: 100%;
     }
 }
 
@@ -316,20 +331,26 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Hero About Section */
 .hero-about {
     max-width: 700px;
+    width: 100%;
     margin: 15px auto;
     font-size: 1em;
     color: var(--text-color-light);
     line-height: 1.8;
+    box-sizing: border-box;
 }
 
 .hero-about p {
     margin-bottom: 15px;
     opacity: 0.9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Animated Horizontal Scroll */
@@ -449,15 +470,19 @@ a:hover {
 /* Hero About Section */
 .hero-about {
     max-width: 700px;
+    width: 100%;
     margin: 15px auto;
     font-size: 1em;
     color: var(--text-color-light);
     line-height: 1.8;
+    box-sizing: border-box;
 }
 
 .hero-about p {
     margin-bottom: 15px;
     opacity: 0.9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 @keyframes fadeInSlideUp {
@@ -575,3 +600,4 @@ a:hover {
         font-size: 1.5em;
     }
 }
+
