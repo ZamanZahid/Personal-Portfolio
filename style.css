@@ -133,13 +133,15 @@ a:hover {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--text-color-dark);
     overflow: hidden;
+    padding: 60px 0;
+    box-sizing: border-box;
 }
 
 .hero-background-animation {
@@ -198,11 +200,28 @@ a:hover {
 @media (max-width: 768px) {
     .hero-container {
         gap: 30px;
+        flex-direction: column-reverse;
     }
     
     .profile-img {
         width: 200px;
         height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .hero-content .name {
+        font-size: 2.5em;
+    }
+
+    .hero-content .description {
+        font-size: 1.2em;
+        height: auto;
+        min-height: 40px;
+    }
+    
+    .hero-about {
+        font-size: 0.9em;
+        padding: 0 15px;
     }
 }
 
@@ -478,14 +497,6 @@ a:hover {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    .hero-content .name {
-        font-size: 3em;
-    }
-
-    .hero-content .description {
-        font-size: 1.5em;
-    }
-
     .cta-buttons {
         flex-direction: column;
         gap: 15px;
@@ -538,11 +549,11 @@ a:hover {
     }
 
     .hero-content .name {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .hero-content .description {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .btn {
@@ -564,4 +575,3 @@ a:hover {
         font-size: 1.5em;
     }
 }
-
