@@ -22,7 +22,7 @@ I'm Zaman, a high school student from Virginia with a passion for software devel
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   git clone https://github.com/ZamanZahid/Personal-Portfolio.git
    ```
 
 2. Open the project folder.
